@@ -47,7 +47,7 @@
 </head>
 <header>Welcome to ${name}</header>
 <br>
-<a href="http://localhost:8080/form">Click here to Register</a></p>
-<<body>
+<a href="/form">Click here to Register</a>
+<body>
 </body>
 </html>

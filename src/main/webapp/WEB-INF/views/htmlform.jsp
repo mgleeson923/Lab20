@@ -54,7 +54,5 @@
     <input type="submit" value="Submit Info">
     <input type="reset" value="Reset">
 </form>
-
-
 </body>
 </html>
