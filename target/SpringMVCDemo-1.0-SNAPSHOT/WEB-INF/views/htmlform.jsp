@@ -35,26 +35,44 @@
             width: 50%;
         }
 
+        /*fieldset {*/
+            /*display: block;*/
+            /*margin-left: 2px;*/
+            /*margin-right: 2px;*/
+            /*padding-top: 0.35em;*/
+            /*padding-bottom: 0.625em;*/
+            /*padding-left: 0.75em;*/
+            /*padding-right: 0.75em;*/
+            /*border: 2px groove (internal value);*/
+        /*}*/
+
 
     </style>
-    <title>Lab 20</title>
+    <title>Lab 20 - 23</title>
 </head>
 <body>
 <form method="post" action="/success">
+    <fieldset>
+        <legend>Name</legend>
     First name: <input type="text" name="c_name" required>
     <br>
     Last Name: <input type="text" name="c_lastname" required>
+        </fieldset>
     <br>
+    <fieldset>
+        <legend>Contact Information</legend>
     Email: <input type="email" name="c_email" required>
     <br>
     Phone Number: <input type="tel" name="c_phone" required>
+    </fieldset>
     <br>
+    <fieldset>
+        <legend>Password</legend>
     Password: <input type="password" name="c_password" required>
+    </fieldset>
     <br>
     <input type="submit" value="Submit Info">
     <input type="reset" value="Reset">
 </form>
-
-
 </body>
 </html>
