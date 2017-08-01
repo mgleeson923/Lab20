@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: michaelgleeson
-  Date: 7/21/17
-  Time: 11:04 AM
+  Date: 7/31/17
+  Time: 6:37 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -50,28 +50,12 @@
         }
 
     </style>
-    <title>Lab20</title>
+    <title>Admin Page</title>
 </head>
-<header>Welcome to Michael's Coffee Shop</header>
-<br>
-<a href="/form">Click here to Register</a>
-<br>
-<a href="/listitems">Menu</a>
-<br>
-<a href="/adminpage">Admin Tools</a>
 <body>
+<a href="/inventory">Inventory</a>
+<br>
+<a href="/listusers">Registered Users</a>
 
-<table border="1">
-    <c:forEach var="myVar" items="${cList}">
-        <tr>
-            <td>${myVar.name}</td>
-            <td>${myVar.quantity}</td>
-            <td>${myVar.description}</td>
-            <td>${myVar.price}</td>
-        </tr>
-
-    </c:forEach>
-
-</table>
 </body>
 </html>

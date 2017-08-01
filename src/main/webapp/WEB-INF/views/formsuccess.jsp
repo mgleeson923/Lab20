@@ -18,12 +18,13 @@
             background-size: 80px 60px;
             background: url("http://cdn.wallpapersafari.com/12/17/mKhbMr.jpg") no-repeat;
             background-size: 100%;
+            text-align: center;
         }
     </style>
     <title>Lab 20</title>
 </head>
 <h1>Welcome ${userName}</h1>
 <body>
-
+<a href="/">Return to Homepage</a>
 </body>
 </html>

@@ -5,7 +5,9 @@ package com.gc.controller;
  */
 
 
+import com.test.mappings.ItemsEntity;
 import com.test.mappings.UsersEntity;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -15,6 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
 
 @Controller
 public class HomeController {
@@ -67,4 +71,69 @@ public class HomeController {
 
         return "formsuccess";
     }
+
+    @RequestMapping("/listitems")
+
+    public ModelAndView listItems() {
+        ArrayList<ItemsEntity> itemsList = getAllItems();
+
+
+        return new
+                ModelAndView("welcome", "cList", itemsList);
+    }
+
+    //extracted method to be used again
+    //regular method, not a Controller method
+    private ArrayList<ItemsEntity> getAllItems() {
+        //allow app to specify properties & mapping documents
+        //use when creating the SessionFactory
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+
+        Session selectCustomers = sessionFactory.openSession();
+
+        selectCustomers.beginTransaction();
+
+        Criteria criteria = selectCustomers.createCriteria(ItemsEntity.class);
+
+        return (ArrayList<ItemsEntity>) criteria.list();
+    }
+
+    @RequestMapping("/adminpage")
+    //String method returns the jsp Page that we want to show
+    public String adminPage() {
+
+        return "adminpage";
+    }
+
+    @RequestMapping("/listusers")
+
+    public ModelAndView listUsers() {
+        ArrayList<UsersEntity> usersList = getAllUsers();
+
+
+        return new
+                ModelAndView("listusers", "userList", usersList);
+    }
+
+    //extracted method to be used again
+    //regular method, not a Controller method
+    private ArrayList<UsersEntity> getAllUsers() {
+        //allow app to specify properties & mapping documents
+        //use when creating the SessionFactory
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+
+        Session selectCustomers = sessionFactory.openSession();
+
+        selectCustomers.beginTransaction();
+
+        Criteria criteria = selectCustomers.createCriteria(UsersEntity.class);
+
+        return (ArrayList<UsersEntity>) criteria.list();
+    }
+
+
 }

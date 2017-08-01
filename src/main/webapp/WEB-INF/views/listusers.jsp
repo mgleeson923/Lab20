@@ -1,12 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: michaelgleeson
-  Date: 7/21/17
-  Time: 11:04 AM
+  Date: 8/1/17
+  Time: 9:56 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <style>
@@ -50,28 +51,25 @@
         }
 
     </style>
-    <title>Lab20</title>
+    <title>Title</title>
 </head>
-<header>Welcome to Michael's Coffee Shop</header>
-<br>
-<a href="/form">Click here to Register</a>
-<br>
-<a href="/listitems">Menu</a>
-<br>
-<a href="/adminpage">Admin Tools</a>
 <body>
-
 <table border="1">
-    <c:forEach var="myVar" items="${cList}">
+    <c:forEach var="user" items="${userList}">
         <tr>
-            <td>${myVar.name}</td>
-            <td>${myVar.quantity}</td>
-            <td>${myVar.description}</td>
-            <td>${myVar.price}</td>
+            <td>${user.firstName}</td>
+            <td>${user.lastName}</td>
+            <td>${user.email}</td>
+            <td>${user.phoneNumber}</td>
+            <td>${user.password}</td>
         </tr>
 
     </c:forEach>
 
 </table>
+<br>
+<br>
+<a href="/adminpage">Return to Admin Tools</a>
+
 </body>
 </html>
