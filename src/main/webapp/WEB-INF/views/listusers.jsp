@@ -62,6 +62,7 @@
             <td>${user.email}</td>
             <td>${user.phoneNumber}</td>
             <td>${user.password}</td>
+            <td><a href="delete?id=${user.firstName}"> Delete </a></td>
         </tr>
 
     </c:forEach>

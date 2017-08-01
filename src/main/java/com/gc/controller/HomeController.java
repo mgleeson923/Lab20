@@ -135,5 +135,30 @@ public class HomeController {
         return (ArrayList<UsersEntity>) criteria.list();
     }
 
+    @RequestMapping("/delete")
+
+    public ModelAndView deleteCustomer(@RequestParam("id") String id) {
+        //temp object will store info for the object we want to delete
+        UsersEntity temp = new UsersEntity();
+
+        temp.setFirstName(id);
+
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+
+        SessionFactory sessionFactory = cfg.buildSessionFactory();
+
+        Session customers = sessionFactory.openSession();
+
+        customers.beginTransaction();
+
+        customers.delete(temp); //delete object from list
+
+        customers.getTransaction().commit(); //delete the row from the database table
+
+        ArrayList<UsersEntity> userList = getAllUsers();
+
+        return new ModelAndView("adminpage", "userList", userList);
+    }
+
 
 }

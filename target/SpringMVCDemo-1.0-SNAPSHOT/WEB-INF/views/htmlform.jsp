@@ -35,16 +35,24 @@
             width: 50%;
         }
 
-        /*fieldset {*/
-            /*display: block;*/
-            /*margin-left: 2px;*/
-            /*margin-right: 2px;*/
-            /*padding-top: 0.35em;*/
-            /*padding-bottom: 0.625em;*/
-            /*padding-left: 0.75em;*/
-            /*padding-right: 0.75em;*/
-            /*border: 2px groove (internal value);*/
-        /*}*/
+        fieldset {
+            display: block;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding-top: 0.35em;
+            padding-bottom: 0.625em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            border-top-width: 2px;
+            border-top-style: groove;
+            border-right-width: 2px;
+            border-right-style: groove;
+            border-left-width: 2px;
+            border-left-style: groove;
+            border-bottom-width: 2px;
+            border-bottom-style: groove;
+            text-align: center;
+        }
 
 
     </style>
